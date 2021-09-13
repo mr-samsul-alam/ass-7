@@ -2,6 +2,11 @@ body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
+/*
+-------------------   heading's all css style are here 
+*/
+
+/* heading Related Css */
 header{
   background-color: rgb(253, 236, 235);
 }
@@ -12,6 +17,7 @@ header{
 .header-style{
 color: rgb(255,193,7);
 }
+/*  Search box Related Css */
 .search-field {
   border: none;
   /* border-radius: 50px; */
@@ -34,10 +40,13 @@ color: rgb(255,193,7);
   margin-bottom: 20px;
   border-right: none;
 }
+/* 
+---------------- All products detail's css style are here
+*/
+
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* border: 1px solid black; */
   text-align: center;
   width: 85%;
   margin: auto;
@@ -58,6 +67,9 @@ color: rgb(255,193,7);
   width: 150px;
   height: 150px;
 }
+/* 
+-------------------------   Cart body's Css style are here
+*/
 .cart {
   width: 350px;
   /* border: 1px solid green; */
@@ -70,11 +82,21 @@ color: rgb(255,193,7);
 .cart-main {
   padding-right: 30px;
 }
+
+/* 
+---------------   Media Query's css style for medium screen  are here
+*/
 @media only screen and (max-width: 768px) {
+  /* 
+  ---- All Products Responsive Css style are here
+  */
   #all-products {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
+    /* 
+  ---- Cart Detail's Responsive Css style are here
+  */
   .cart {
     width: 300px;
     /* border: 1px solid green; */
@@ -88,6 +110,9 @@ color: rgb(255,193,7);
     padding-right: 10px;
   }
 }
+/* 
+-------------    Media Query's css style for Mobile screen  are here
+*/
 @media only screen and (max-width: 468px) {
   #all-products {
     display: grid;

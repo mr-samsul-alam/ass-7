@@ -6,9 +6,8 @@ const loadProducts = () => {
 };
 
 
-// show all product in UI 
+//-----  All product are Showing in UI 
 const showProducts = (products) => {
-  // console.log(products)
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
     const image = product.image;
@@ -54,7 +53,7 @@ const updatePrice = (id, value) => {
   document.getElementById(id).innerText =  parseFloat(total).toFixed(2);
 };
 
-// set innerText function
+// Set innerText function
 const setInnerText = (id, value) => {
   document.getElementById(id).innerText = parseFloat(value).toFixed(2);
 };
@@ -62,7 +61,6 @@ const setInnerText = (id, value) => {
 // update delivery charge and total Tax
 const updateTaxAndCharge = () => {
   const priceConverted = getInputValue("price");
-  // console.log(priceConverted);
   if (priceConverted > 200) {
     setInnerText("delivery-charge", 30);
     setInnerText("total-tax", (priceConverted * 0.2));

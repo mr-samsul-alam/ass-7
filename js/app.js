@@ -1,12 +1,10 @@
 const loadProducts = () => {
-  // const url = `https://fakestoreapi.com/products`;
   fetch('./js/data.json')
-  // fetch(url)
     .then((response) => response.json())
     .then((data) => showProducts(data))
     .catch(err=> console.log(err))
 };
-loadProducts();
+
 
 // show all product in UI 
 const showProducts = (products) => {
@@ -22,7 +20,7 @@ const showProducts = (products) => {
       </div>
       <h3>${product.title}</h3>
       <p>Category: <b> ${product.category} </b></p>
-      <h4>Rating:<b> ${product.rating.rate} </b></h4>
+      <h4>Rating:<b> ${product.rating.rate}</b></h4>
       <h4> <b> ${product.rating.count}</b> Person rated this product</h4>
       <h2>Price: $ ${product.price}</h2>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-primary">add to cart</button>
@@ -33,10 +31,8 @@ const showProducts = (products) => {
 };
 let count = 0;
 const addToCart = (id, price) => {
-  
   count = count + 1;
   updatePrice("price", price);
-
   updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
 };
@@ -60,7 +56,7 @@ const updatePrice = (id, value) => {
 
 // set innerText function
 const setInnerText = (id, value) => {
-  document.getElementById(id).innerText = parseFloat(value);
+  document.getElementById(id).innerText = parseFloat(value).toFixed(2);
 };
 
 // update delivery charge and total Tax
@@ -69,17 +65,17 @@ const updateTaxAndCharge = () => {
   // console.log(priceConverted);
   if (priceConverted > 200) {
     setInnerText("delivery-charge", 30);
-    setInnerText("total-tax", (priceConverted * 0.2).toFixed(2));
+    setInnerText("total-tax", (priceConverted * 0.2));
     updateTotal()
   }
   if (priceConverted > 400) {
     setInnerText("delivery-charge", 50);
-    setInnerText("total-tax", (priceConverted * 0.3).toFixed(2));
+    setInnerText("total-tax", (priceConverted * 0.3) );
     updateTotal()
   }
   if (priceConverted > 500) {
     setInnerText("delivery-charge", 60);
-    setInnerText("total-tax", (priceConverted * 0.4).toFixed(2));
+    setInnerText("total-tax", (priceConverted * 0.4) );
     updateTotal()
   }
   else{
@@ -94,3 +90,4 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = parseFloat(grandTotal).toFixed(2);
 };
+loadProducts();

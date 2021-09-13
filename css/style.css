@@ -2,14 +2,22 @@ body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
+header{
+  background-color: rgb(253, 236, 235);
+}
+ header h1{
+   margin-top: 0px;
+   padding-top: 50px;
+ }
 .header-style{
-color: rgb(3, 118, 211);
+color: rgb(255,193,7);
 }
 .search-field {
   border: none;
-  border-radius: 50px;
+  /* border-radius: 50px; */
   padding: 5px;
   outline: none;
+  width: 100%;
 }
 .search-field:hover {
   outline: none;
@@ -19,10 +27,11 @@ color: rgb(3, 118, 211);
   display: flex;
   justify-content: space-between;
   border: 1px solid rgb(3, 118, 211);
-  width: 281px;
+  width: 30%;
   border-radius: 5px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 20px;
   border-right: none;
 }
 #all-products {
@@ -30,8 +39,9 @@ color: rgb(3, 118, 211);
   grid-template-columns: repeat(3, 1fr);
   /* border: 1px solid black; */
   text-align: center;
-  width: 100%;
+  width: 85%;
   margin: auto;
+  margin-top: 20px;
   align-items: center;
   justify-content: center;
 }

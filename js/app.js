@@ -21,10 +21,10 @@ const showProducts = (products) => {
     <img class="product-image" src=${image}></img>
       </div>
       <h3>${product.title}</h3>
-      <p>Category: ${product.category}</p>
+      <p>Category: <b> ${product.category} </b></p>
+      <h4>Rating:<b> ${product.rating.rate} </b></h4>
+      <h4> <b> ${product.rating.count}</b> Person rated this product</h4>
       <h2>Price: $ ${product.price}</h2>
-      <h5>Rating: ${product.rating.rate}</h5>
-      <h5>Given: ${product.rating.count}</h5>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
       <button id="details-btn" class="btn btn-danger">Details</button></div>
       `;
@@ -43,19 +43,19 @@ const addToCart = (id, price) => {
 
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
-  console.log(id)
-  const converted = Number.parseFloat(element) ;
+  console.log(element)
+  const converted = parseFloat(element) ;
+  console.log(converted)
   return converted;
 };
 
 // main price update function
 const updatePrice = (id, value) => {
-  
   const convertedOldPrice = getInputValue(id);
-  console.log(id)
+  console.log(convertedOldPrice)
   const convertPrice =  parseFloat(value);
   const total = convertedOldPrice + convertPrice;
-  document.getElementById(id).innerText =  parseFloat(total);
+  document.getElementById(id).innerText =  parseFloat(total).toFixed(2);
 };
 
 // set innerText function
@@ -66,20 +66,20 @@ const setInnerText = (id, value) => {
 // update delivery charge and total Tax
 const updateTaxAndCharge = () => {
   const priceConverted = getInputValue("price");
-  console.log(priceConverted);
+  // console.log(priceConverted);
   if (priceConverted > 200) {
     setInnerText("delivery-charge", 30);
-    setInnerText("total-tax", priceConverted * 0.2);
+    setInnerText("total-tax", (priceConverted * 0.2).toFixed(2));
     updateTotal()
   }
   if (priceConverted > 400) {
     setInnerText("delivery-charge", 50);
-    setInnerText("total-tax", priceConverted * 0.3);
+    setInnerText("total-tax", (priceConverted * 0.3).toFixed(2));
     updateTotal()
   }
   if (priceConverted > 500) {
     setInnerText("delivery-charge", 60);
-    setInnerText("total-tax", priceConverted * 0.4);
+    setInnerText("total-tax", (priceConverted * 0.4).toFixed(2));
     updateTotal()
   }
   else{

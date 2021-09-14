@@ -44,7 +44,7 @@ color: rgb(255,193,7);
 ---------------- All products detail's css style are here
 */
 section{
-  background: linear-gradient(to bottom, #fdeceb 35%, #ccffff 83%);
+  background: linear-gradient(to bottom, #fdeceb 9%, #ccffff 42%);
 }
 #all-products {
   display: grid;
@@ -57,7 +57,7 @@ section{
   justify-content: center;
 }
 .single-product {
-  background-color: white;
+  
   padding: 10px;
   margin-top: 15px;
   margin-left: 10px;
@@ -67,6 +67,7 @@ section{
   transition: 0.9s;
   box-shadow: 0 5px 10px rgb(134 136 132);
   border: 1px solid transparent;
+  background-color: white;
 
 }
 .single-product:hover {

@@ -30,37 +30,34 @@ const showProducts = (products) => {
   }
 };
 let count = 0;
-// Details are Adding in Cart Details 
+//-------New Details are Adding in Cart Details 
 const addToCart = (id, price) => {
   count = count + 1;
   updatePrice("price", price);
   updateTaxAndCharge();
   document.getElementById("total-Products").innerText = count;
 };
-
+//---- Get All Old cart details and Convert it
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
-  console.log(element)
   const converted = parseFloat(element) ;
-  console.log(converted)
   return converted;
 };
 
-// main price update function
+//-------- Main price update function
 const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
-  console.log(convertedOldPrice)
   const convertPrice =  parseFloat(value);
   const total = convertedOldPrice + convertPrice;
   document.getElementById(id).innerText =  parseFloat(total).toFixed(2);
 };
 
-// Set innerText function
+//------ Set innerText function
 const setInnerText = (id, value) => {
   document.getElementById(id).innerText = parseFloat(value);
 };
 
-// update delivery charge and total Tax
+//-------- Update delivery charge and total Tax
 const updateTaxAndCharge = () => {
   const priceConverted = getInputValue("price");
   if (priceConverted > 200) {
@@ -83,11 +80,12 @@ const updateTaxAndCharge = () => {
   }
 };
 
-//grandTotal update function
+//---------------GrandTotal update function
 const updateTotal = () => {
   const grandTotal =
     getInputValue("price") + getInputValue("delivery-charge") +
     getInputValue("total-tax");
   document.getElementById("total").innerText = parseFloat(grandTotal).toFixed(2);
 };
+// --- Api's Function are called here
 loadProducts();

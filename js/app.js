@@ -1,3 +1,4 @@
+// ---- API are loaded here 
 const loadProducts = () => {
   fetch('./js/data.json')
     .then((response) => response.json())
@@ -29,6 +30,7 @@ const showProducts = (products) => {
   }
 };
 let count = 0;
+// Details are Adding in Cart Details 
 const addToCart = (id, price) => {
   count = count + 1;
   updatePrice("price", price);
@@ -55,7 +57,7 @@ const updatePrice = (id, value) => {
 
 // Set innerText function
 const setInnerText = (id, value) => {
-  document.getElementById(id).innerText = parseFloat(value).toFixed(2);
+  document.getElementById(id).innerText = parseFloat(value);
 };
 
 // update delivery charge and total Tax
@@ -63,17 +65,17 @@ const updateTaxAndCharge = () => {
   const priceConverted = getInputValue("price");
   if (priceConverted > 200) {
     setInnerText("delivery-charge", 30);
-    setInnerText("total-tax", (priceConverted * 0.2));
+    setInnerText("total-tax", (priceConverted * 0.2).toFixed(2));
     updateTotal()
   }
   if (priceConverted > 400) {
     setInnerText("delivery-charge", 50);
-    setInnerText("total-tax", (priceConverted * 0.3) );
+    setInnerText("total-tax", (priceConverted * 0.3).toFixed(2));
     updateTotal()
   }
   if (priceConverted > 500) {
     setInnerText("delivery-charge", 60);
-    setInnerText("total-tax", (priceConverted * 0.4) );
+    setInnerText("total-tax", (priceConverted * 0.4).toFixed(2));
     updateTotal()
   }
   else{

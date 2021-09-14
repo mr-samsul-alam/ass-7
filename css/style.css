@@ -43,7 +43,9 @@ color: rgb(255,193,7);
 /* 
 ---------------- All products detail's css style are here
 */
-
+section{
+  background: linear-gradient(to bottom, #fdeceb 35%, #ccffff 83%);
+}
 #all-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -55,12 +57,20 @@ color: rgb(255,193,7);
   justify-content: center;
 }
 .single-product {
+  background-color: white;
   padding: 10px;
-  transition: 0.6s;
+  margin-top: 15px;
+  margin-left: 10px;
+  width: 370px;
+  height: 500px;
+  border-radius: 10px;
+  transition: 0.9s;
+  box-shadow: 0 5px 10px rgb(134 136 132);
+  border: 1px solid transparent;
+
 }
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;
-  border-radius: 10px;
   border: 1px solid rgb(3, 118, 211);
 }
 .product-image {
@@ -72,12 +82,12 @@ color: rgb(255,193,7);
 */
 .cart {
   width: 350px;
-  /* border: 1px solid green; */
   padding: 10px;
   box-shadow: 10px 10px 20px gray;
   border-radius: 5px;
   margin-right: 30px;
   position: fixed;
+  background-color: white;
 }
 .cart-main {
   padding-right: 30px;
